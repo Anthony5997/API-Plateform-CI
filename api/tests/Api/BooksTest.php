@@ -31,8 +31,8 @@ class BooksTest extends ApiTestCase
     public function testCreateBook(): void
     {
         static::createClient()->request('POST', '/books', ['json' => [
-            "name" => "string",
             "author" => "string",
+            "name" => "string",
             "datePublished" => "2022-08-03"
         ]]);
 
@@ -40,8 +40,8 @@ class BooksTest extends ApiTestCase
         $this->assertJsonContains([
             "@context"=> "/contexts/Book",
             "@type"=> "Book",
-            "name"=> "string",
             "author"=> "string",
+            "name"=> "string",
         ]);
     }
 } 
