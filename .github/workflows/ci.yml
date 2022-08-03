@@ -8,9 +8,7 @@ on:
     branches: [master]
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v2
-    - name: pull-request
-      uses: repo-sync/pull-request@v2
+
 
   workflow_dispatch: ~
 
@@ -53,3 +51,11 @@ jobs:
         run: docker compose exec -T php bin/console doctrine:schema:validate --skip-sync
       # - name: Jest
       #   run: docker compose exec -T pwa yarn test --ci --passWithNoTests
+      
+      - uses: repo-sync/pull-request@v2
+        name: pull-request
+        with:
+          destination_branch: "master"                      # If blank, default: master
+          pr_title: "CI push" # Title of pull request
+          pr_body: ":crown: *An automated PR*"              # Full markdown support, requires pr_title to be set
+          github_token: ${{ secrets.GITHUB_TOKEN }}
