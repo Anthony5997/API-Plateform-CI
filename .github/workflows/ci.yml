@@ -5,15 +5,12 @@ on:
     branches:
       - main
   pull_request: 
+    branches: [master]
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
     - name: pull-request
       uses: repo-sync/pull-request@v2
-      with:
-        destination_branch: "master"
-         pr_title: "Pulling ${{ github.ref }} into master"
-        github_token: ${{ secrets.GITHUB_TOKEN }}
 
   workflow_dispatch: ~
 
