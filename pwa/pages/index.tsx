@@ -31,7 +31,7 @@ const Welcome = () => (
         </div>
         <div className="main__content">
           <h1>
-            Welcome to <strong>API Platform PIPELINE NIMBUS 2000 !</strong>!
+            Welcome to <strong>JURASSIC PARK PIPELINE NIMBUS 2000 !</strong>!
           </h1>
           <div className="main__before-starting">git 
             <p>
