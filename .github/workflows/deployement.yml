@@ -1,18 +1,15 @@
-# This is a basic workflow to help you get started with Actions
 name: CI Deployement
 
-# Controls when the workflow will run
 on:
-  # Triggers the workflow on push or pull request events but only for the "main" branch
   push:
-    branches: [ "master" ]
+    branches: 
+      - master
 
-# A workflow run is made up of one or more jobs that can run sequentially or in parallel
-  jobs:
-    build:
-      name: Build
-      runs-on: ubuntu-latest
-      steps:
+jobs:
+  deploy:
+    name: Build
+    runs-on: ubuntu-latest
+    steps:
       - name: executing remote ssh commands using password
         uses: appleboy/ssh-action@master
         with:
