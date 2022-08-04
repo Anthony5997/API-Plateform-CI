@@ -8,16 +8,16 @@ on:
     branches: [ "master" ]
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
-  jobs:
-    build:
-      name: Build
-      runs-on: ubuntu-latest
-      steps:
-      - name: executing remote ssh commands using password
-        uses: appleboy/ssh-action@master
-        with:
-          host: ${{ secrets.HOST }}
-          username: ${{ secrets.USERNAME }}
-          key: ${{ secrets.KEY }}
-          port: ${{ secrets.PORT }}
-          script: pwd
+jobs:
+  build:
+    name: Build
+    runs-on: ubuntu-latest
+    steps:
+    - name: executing remote ssh commands using password
+      uses: appleboy/ssh-action@master
+      with:
+        host: ${{ secrets.HOST }}
+        username: ${{ secrets.USERNAME }}
+        key: ${{ secrets.KEY }}
+        port: ${{ secrets.PORT }}
+        script: pwd
